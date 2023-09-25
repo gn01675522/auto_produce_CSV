@@ -1,0 +1,30 @@
+{
+  "name": "interview-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "usersSeed": "node ./models/seeds/usersSeeder.js",
+    "productsSeed": "node ./models/seeds/productsSeeder.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "express-handlebars": "^4.0.2",
+    "iconv-lite": "^0.6.3",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.7.2",
+    "node-schedule": "^2.1.1",
+    "papaparse": "^5.4.1"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1"
+  }
+}

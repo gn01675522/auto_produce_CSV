@@ -1,0 +1,62 @@
+<div class="csv__body">
+  {{#each message}}
+    <div>{{this}}</div>
+  {{/each}}
+  <div class="csv__body-content">
+    <div class="csv__body-content-title">
+      <h3>USER 報表</h3>
+      <ul>
+        {{#each usersFileNames}}
+          <li class="csv__body-content-item">
+            <a href="/download/users/{{this}}">
+              {{this}}
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="csv__body-form">
+      <form
+        action="./upload/products"
+        method="POST"
+        class="csv__body-form-group"
+      >
+        <h3 class="csv__body-form-group-title">新增 Products 表單</h3>
+        <input type="text" placeholder="請輸入產品 ID" name="Item_id" />
+        <input type="text" placeholder="請輸入產品型號" name="Item_model" />
+        <input type="text" placeholder="請輸入產品描述" name="Item_desc" />
+        <input type="text" placeholder="請輸入產品類型" name="Item_cata" />
+        <input
+          type="number"
+          placeholder="請輸入產品價格"
+          min="0"
+          oninput="this.value = Math.abs(this.value)"
+          name="Item_price"
+        />
+        <button type="submit">提交</button>
+      </form>
+      <form action="./upload/users" method="POST" class="csv__body-form-group">
+        <h3 class="csv__body-form-group-title">新增 Users 表單</h3>
+        <input type="text" placeholder="請輸入使用者 ID" name="User_id" />
+        <input
+          type="password"
+          placeholder="請輸入使用者密碼"
+          name="User_password"
+        />
+        <button type="submit">提交</button>
+      </form>
+    </div>
+    <div>
+      <h3 class="csv__body-content-title">PRODUCTS 報表</h3>
+      <ul>
+        {{#each productsFileNames}}
+          <li class="csv__body-content-item">
+            <a href="/download/products/{{this}}">
+              {{this}}
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
